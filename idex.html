@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flávio Ribeiro — BI & Data</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Particles & Charts (defer carregamento no final) -->
+</head>
+<body>
+
+  <!-- PARTICLES / GRID BACKGROUND (visual tecnológico) -->
+  <div id="bg-particles" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">FR<span class="dot">.</span></div>
+
+      <!-- FOTO DE PERFIL: coloque 'profile.jpg' na mesma pasta -->
+      <img src= "img/profile.jpg" alt="Foto de Perfil — Flávio Ribeiro" class="profile-photo">
+
+      <div class="brand-txt">
+        <strong>Flávio Ribeiro</strong>
+        <small>BI & Data Analyst</small>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#skills">Skills</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn ghost" id="downloadCv" href="#" target="_blank">Baixar CV</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div class="hero-left">
+      <h1>Transformando dados em decisões estratégicas</h1>
+      <p class="lead typing" aria-live="polite"></p>
+
+      <div class="hero-ctas">
+        <a class="btn" href="#projetos">Ver Projetos</a>
+        <a class="btn outline" id="contactMailBtn" href="mailto:seuemail@email.com">Enviar Email</a>
+      </div>
+
+      <div class="mini-metrics" aria-hidden="true">
+        <div class="metric">
+          <div class="num" data-target="120">0</div>
+          <div class="label">Dashboards</div>
+        </div>
+        <div class="metric">
+          <div class="num" data-target="30">0</div>
+          <div class="label">Projetos</div>
+        </div>
+        <div class="metric">
+          <div class="num" data-target="2">0</div>
+          <div class="label">Anos</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="card card-visual">
+        <canvas id="heroChart" width="400" height="260" aria-label="Gráfico de receita"></canvas>
+        <div class="card-info">
+          <h4>Receita vs Meta</h4>
+          <p class="muted">Preview interativo</p>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- IMPACT / faixa logo abaixo do hero (usa o espaço) -->
+  <section class="impact container">
+    <div class="impact-grid">
+      <div class="impact-card">
+        <h3><span class="counter" data-target="30">0</span>%</h3>
+        <p>Aumento de Eficiência</p>
+      </div>
+      <div class="impact-card">
+        <h3><span class="counter" data-target="20">0</span>%</h3>
+        <p>Redução de Custos</p>
+      </div>
+      <div class="impact-card">
+        <h3><span class="counter" data-target="45">0</span>%</h3>
+        <p>Otimização de Processos</p>
+      </div>
+      <div class="impact-card">
+        <h3><span class="counter" data-target="120">0</span>+</h3>
+        <p>Dashboards</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="container section reveal">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou analista de Business Intelligence com foco em Power BI, DAX, SQL e visualização estratégica.
+      Gosto de transformar perguntas de negócio em métricas acionáveis e relatórios escaláveis.
+    </p>
+  </section>
+
+  <!-- SKILLS: mostra descrição curta sempre; ao clicar abre detalhes (SE, SOMASE etc.) -->
+  <section id="skills" class="container section reveal">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <!-- Excel -->
+      <div class="skill-card" data-skill="excel" tabindex="0" role="button" aria-expanded="false">
+        <div class="skill-head">
+          <i class="fa-solid fa-file-excel"></i>
+          <div>
+            <h3>Excel</h3>
+            <p class="small">Dashboards, fórmulas e Power Query</p>
+          </div>
+        </div>
+        <div class="skill-details" aria-hidden="true">
+          <strong>Funções & técnicas:</strong>
+          <ul>
+            <li>SE, SOMASE, SOMASES, CONT.SES</li>
+            <li>PROCV / XLOOKUP / ÍNDICE+CORRESP</li>
+            <li>Tabelas Dinâmicas, Power Query, Macros básicas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Power BI -->
+      <div class="skill-card" data-skill="powerbi" tabindex="0" role="button" aria-expanded="false">
+        <div class="skill-head">
+          <i class="fa-solid fa-chart-pie"></i>
+          <div>
+            <h3>Power BI</h3>
+            <p class="small">Modelagem, DAX e storytelling</p>
+          </div>
+        </div>
+        <div class="skill-details" aria-hidden="true">
+          <strong>Técnicas:</strong>
+          <ul>
+            <li>DAX: CALCULATE, FILTER, SUMX, VAR</li>
+            <li>Modelagem dimensional, relationships e star schema</li>
+            <li>Visuals, bookmarks e drill-through</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SQL -->
+      <div class="skill-card" data-skill="sql" tabindex="0" role="button" aria-expanded="false">
+        <div class="skill-head">
+          <i class="fa-solid fa-database"></i>
+          <div>
+            <h3>SQL</h3>
+            <p class="small">Consultas e otimização</p>
+          </div>
+        </div>
+        <div class="skill-details" aria-hidden="true">
+          <strong>Comandos:</strong>
+          <ul>
+            <li>SELECT, JOIN (INNER/LEFT/RIGHT), GROUP BY</li>
+            <li>CTE, subqueries, views</li>
+            <li>Indexação e otimização básica</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="skill-card" data-skill="python" tabindex="0" role="button" aria-expanded="false">
+        <div class="skill-head">
+          <i class="fa-brands fa-python"></i>
+          <div>
+            <h3>Python</h3>
+            <p class="small">Automação & Pandas</p>
+          </div>
+        </div>
+        <div class="skill-details" aria-hidden="true">
+          <strong>Bibliotecas:</strong>
+          <ul>
+            <li>Pandas, NumPy</li>
+            <li>Requests / APIs, integração com bancos</li>
+            <li>Automação de ETL e geração de relatórios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS: cards com modal + gráfico -->
+  <section id="projetos" class="container section reveal">
+    <div class="projects-head">
+      <h2>Projetos</h2>
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="financeiro">Financeiro</button>
+        <button class="filter" data-filter="transporte">Transporte</button>
+        <button class="filter" data-filter="producao">Produção</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <article class="project-card" data-category="transporte" data-project='{"title":"Dashboard Transporte","desc":"KPIs, passageiros e margem.","labels":["Jan","Fev","Mar"],"data":[120,98,130]}'>
+        <h3>Dashboard Transporte</h3>
+        <p class="muted">KPIs operacionais e margem</p>
+        <div class="project-actions">
+          <button class="btn small" data-open="modal">Detalhes</button>
+          <a class="link" href="#" target="_blank">Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="financeiro" data-project='{"title":"Relatório Financeiro","desc":"Receita, custo e margem por país.","labels":["Q1","Q2","Q3"],"data":[40,55,80]}'>
+        <h3>Relatório Financeiro</h3>
+        <p class="muted">Análises e heatmaps</p>
+        <div class="project-actions">
+          <button class="btn small" data-open="modal">Detalhes</button>
+          <a class="link" href="#" target="_blank">Demo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MODAL do projeto -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-inner" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc" class="muted"></p>
+      <div class="modal-chart">
+        <canvas id="modalChart" width="600" height="300"></canvas>
+      </div>
+      <div class="modal-actions">
+        <a id="modalDemo" class="btn outline" href="#" target="_blank">Abrir Demo</a>
+        <a id="modalRepo" class="btn ghost" href="#" target="_blank">Ver Código</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTATO -->
+  <section id="contato" class="container section reveal">
+    <h2>Vamos Conversar</h2>
+
+    <div class="contact-split">
+      <div class="contact-left">
+        <p>Envie um email direto — respondo eu mesmo por lá.</p>
+
+        <div class="contact-links">
+          <a class="btn email" id="mailtoBtn" href="mailto:seuemail@email.com?subject=Contato%20via%20Portfolio">📧 seuemail@email.com</a>
+          <a class="btn linkedin" href="https://linkedin.com/in/seuperfil" target="_blank">🔗 linkedin.com/in/seuperfil</a>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-right" aria-label="Formulário de contato (abre email)">
+        <input id="cfName" type="text" placeholder="Seu nome" required>
+        <input id="cfEmail" type="email" placeholder="Seu email" required>
+        <textarea id="cfMessage" rows="5" placeholder="Sua mensagem..." required></textarea>
+        <div class="form-actions">
+          <button class="btn" type="submit">Abrir no meu email</button>
+          <button class="btn outline" type="button" id="btnCopyMail">Copiar email</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2026 Flávio Ribeiro — Todos os direitos reservados</small>
+      <a class="footer-link" href="https://linkedin.com/in/seuperfil" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS externos e internos -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
